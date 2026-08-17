@@ -39,51 +39,87 @@ function App() {
 
   return (
     <>
-      <div className="p-5">
-        <h1 className="text-5xl font-bold ">Form</h1>
-        <h3 className="text-2xl font-medium">Fill out the form below carefully!</h3>
-        <form action="" onSubmit={formik.handleSubmit} className="mt-5">
-          <input
-            type="text"
-            placeholder="Firstname"
-            value={formik.values.firstName}
-            onChange={formik.handleChange}
-            name="firstName"
-          />
-          {formik.errors.firstName && <p>{formik.errors.firstName}</p>}
-          <input
-            type="text"
-            placeholder="Lastname"
-            value={formik.values.lastName}
-            onChange={formik.handleChange}
-            name="lastName"
-          />
-          {formik.errors.lastName && <p>{formik.errors.lastName}</p>}
-          <input
-            type="number"
-            placeholder="Number"
-            value={formik.values.number}
-            onChange={formik.handleChange}
-            name="number"
-          />
-          {formik.errors.number && <p>{formik.errors.number}</p>}
-          <input
-            type="email"
-            placeholder="Email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            name="email"
-          />
-          {formik.errors.email && <p>{formik.errors.email}</p>}
-          <input
-            type="password"
-            placeholder="Password"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            name="password"
-          />
-          {formik.errors.password && <p>{formik.errors.password}</p>}
-          <input type="submit" />
+      <div className="p-5 flex flex-col justify-center items-center">
+        <h1 className="text-5xl font-bold ">Form:</h1>
+        <h3 className="text-2xl font-medium">
+          Fill out the form below carefully!
+        </h3>
+        <form
+          action=""
+          onSubmit={formik.handleSubmit}
+          className="mt-5 flex flex-col gap-y-5 w-80"
+        >
+          <div>
+            <label>Firstname : </label>
+            <input
+              type="text"
+              placeholder="Faraz"
+              value={formik.values.firstName}
+              onChange={formik.handleChange}
+              name="firstName"
+              className="focus:outline-0 placeholder:text-sky-500 text-sky-500"
+            />
+            {formik.errors.firstName && (
+              <p className="text-rose-500">{formik.errors.firstName}</p>
+            )}
+          </div>
+          <div>
+            <label>Lastname : </label>
+            <input
+              type="text"
+              placeholder="Emdadi"
+              value={formik.values.lastName}
+              onChange={formik.handleChange}
+              name="lastName"
+              className="focus:outline-0 placeholder:text-sky-500 text-sky-500"
+            />
+            {formik.errors.lastName && (
+              <p className="text-rose-500">{formik.errors.lastName}</p>
+            )}
+          </div>
+          <div>
+            <label>Number : </label>
+            <input
+              type="number"
+              placeholder="9374802514"
+              value={formik.values.number}
+              onChange={formik.handleChange}
+              name="number"
+              className="focus:outline-0 placeholder:text-sky-500 text-sky-500"
+            />
+            {formik.errors.number && (
+              <p className="text-rose-500">{formik.errors.number}</p>
+            )}
+          </div>
+          <div>
+            <label>Email : </label>
+            <input
+              type="email"
+              placeholder="faraz1388@gmail.com"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              name="email"
+              className="focus:outline-0 placeholder:text-sky-500 text-sky-500"
+            />
+            {formik.errors.email && (
+              <p className="text-rose-500">{formik.errors.email}</p>
+            )}
+          </div>
+          <div>
+            <label>Passeord : </label>
+            <input
+              type="password"
+              placeholder="12345678"
+              value={formik.values.password}
+              onChange={formik.handleChange}
+              name="password"
+              className="focus:outline-0 placeholder:text-sky-500 text-sky-500"
+            />
+            {formik.errors.password && (
+              <p className="text-rose-500">{formik.errors.password}</p>
+            )}
+          </div>
+          <input type="submit" className="bg-sky-500 w-40 rounded-sm" />
         </form>
         <div className="mt-5">
           <ul>
