@@ -40,7 +40,7 @@ function App() {
   return (
     <>
       <div className="p-5 flex flex-col justify-center items-center">
-        <h1 className="text-5xl font-bold ">Form:</h1>
+        <h1 className="text-5xl font-bold text-sky-500">Form:</h1>
         <h3 className="text-2xl font-medium">
           Fill out the form below carefully!
         </h3>
@@ -57,7 +57,7 @@ function App() {
               value={formik.values.firstName}
               onChange={formik.handleChange}
               name="firstName"
-              className="focus:outline-0 placeholder:text-sky-500 text-sky-500"
+              className="focus:outline-0 placeholder:text-sky-500 text-sky-500 border-b border-sky-500"
             />
             {formik.errors.firstName && (
               <p className="text-rose-500">{formik.errors.firstName}</p>
@@ -71,7 +71,7 @@ function App() {
               value={formik.values.lastName}
               onChange={formik.handleChange}
               name="lastName"
-              className="focus:outline-0 placeholder:text-sky-500 text-sky-500"
+              className="focus:outline-0 placeholder:text-sky-500 text-sky-500 border-b border-sky-500"
             />
             {formik.errors.lastName && (
               <p className="text-rose-500">{formik.errors.lastName}</p>
@@ -85,7 +85,7 @@ function App() {
               value={formik.values.number}
               onChange={formik.handleChange}
               name="number"
-              className="focus:outline-0 placeholder:text-sky-500 text-sky-500"
+              className="focus:outline-0 placeholder:text-sky-500 text-sky-500 border-b border-sky-500"
             />
             {formik.errors.number && (
               <p className="text-rose-500">{formik.errors.number}</p>
@@ -99,35 +99,53 @@ function App() {
               value={formik.values.email}
               onChange={formik.handleChange}
               name="email"
-              className="focus:outline-0 placeholder:text-sky-500 text-sky-500"
+              className="focus:outline-0 placeholder:text-sky-500 text-sky-500 border-b border-sky-500"
             />
             {formik.errors.email && (
               <p className="text-rose-500">{formik.errors.email}</p>
             )}
           </div>
           <div>
-            <label>Passeord : </label>
+            <label>Password : </label>
             <input
               type="password"
               placeholder="12345678"
               value={formik.values.password}
               onChange={formik.handleChange}
               name="password"
-              className="focus:outline-0 placeholder:text-sky-500 text-sky-500"
+              className="focus:outline-0 placeholder:text-sky-500 text-sky-500 border-b border-sky-500"
             />
             {formik.errors.password && (
               <p className="text-rose-500">{formik.errors.password}</p>
             )}
           </div>
-          <input type="submit" className="bg-sky-500 w-40 rounded-sm" />
+          <input
+            type="submit"
+            className="bg-sky-500 w-40 rounded-sm ml-20 p-1 cursor-pointer"
+          />
         </form>
         <div className="mt-5">
           <ul>
-            <li>Firstname = {formik.values.firstName}</li>
-            <li>Lastname = {formik.values.lastName}</li>
-            <li>Number = {formik.values.number}</li>
-            <li>Email = {formik.values.email}</li>
-            <li>Password = {formik.values.password}</li>
+            <li>
+              Firstname ={" "}
+              <span className="text-sky-500">{formik.values.firstName}</span>
+            </li>
+            <li>
+              Lastname ={" "}
+              <span className="text-sky-500">{formik.values.lastName}</span>
+            </li>
+            <li>
+              Number ={" "}
+              <span className="text-sky-500">{formik.values.number}</span>
+            </li>
+            <li>
+              Email ={" "}
+              <span className="text-sky-500">{formik.values.email}</span>
+            </li>
+            <li>
+              Password ={" "}
+              <span className="text-sky-500">{formik.values.password}</span>
+            </li>
           </ul>
         </div>
       </div>
